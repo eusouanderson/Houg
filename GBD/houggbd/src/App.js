@@ -1,5 +1,5 @@
 import React from 'react';
-import GerenciamentoCamisetas from './components/GerenciamentoCamisetas'; // Importe o componente GerenciamentoCamisetas aqui
+import GerenciamentoCamisetas from './components/GerenciamentoCamisetas';
 
 function App() {
   return (

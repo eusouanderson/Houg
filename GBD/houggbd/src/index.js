@@ -1,14 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // Importe ReactDOM corretamente
+import { createRoot } from 'react-dom'; 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import GerenciamentoCamisetas from './components/GerenciamentoCamisetas';
 
-ReactDOM.render(
+const root = document.getElementById('root');
+const rootElement = createRoot(root); 
+
+rootElement.render(
   <React.StrictMode>
     <GerenciamentoCamisetas />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 reportWebVitals();

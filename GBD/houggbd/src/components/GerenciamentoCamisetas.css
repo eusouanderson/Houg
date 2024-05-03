@@ -1,70 +1,75 @@
+/* Importar fonte Anton do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* Estilização do h1 com fonte Anton */
+h1 {
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: #fbfbfb;
+  font-size: 58px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: url('/src/images/houg.jpg') no-repeat center center;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+nav {
+  text-align: center;
+  padding: 20px;
+  height: 140px;
+  
+}
+
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 2px;
+  max-width: 1200px;
+  color: #6e6e6e;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  background-image: url('/src/images/houg_background.jpg');
+  background-size: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-attachment: fixed;
   
-  .form {
-    margin-bottom: 20px;
-  }
-  
-  .form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .form input[type="text"],
-  .form input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .button-limpar {
-    background-color: #dc3545;
-  }
-  
-  .button-limpar:hover {
-    background-color: #bd2130;
-  }
-  
-  .camisetas-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .camisetas-table th,
-  .camisetas-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .camisetas-table th {
-    background-color: #f2f2f2;
-    text-align: left;
-  }
-  
-  .camisetas-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .camisetas-table tr:hover {
-    background-color: #ddd;
-  }
-  
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #6e6e6e;
+  height: 40px;
+  width: 20px;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="file"],
+.form button {
+  width: auto;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #444;
+}
+
+.form button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}

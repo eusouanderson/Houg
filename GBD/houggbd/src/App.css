@@ -1,9 +1,13 @@
-/* Estilos para o componente GerenciamentoCamisetas */
+body {
+  background-image: url('/GBD/houggbd/src/images/Houg.jpg');
+  background-size: cover;
+}
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: #f0f0f0; /* Cor de fundo */
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .form {

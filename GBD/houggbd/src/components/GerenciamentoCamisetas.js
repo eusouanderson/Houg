@@ -20,7 +20,7 @@ const GerenciamentoCamisetas = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const reader = new FileReader(); // Crie uma instância de FileReader
+    const reader = new FileReader(); 
     reader.onload = function () {
       const novaCamiseta = {
         id: camisetas.length + 1,
@@ -28,11 +28,11 @@ const GerenciamentoCamisetas = () => {
         modelo: modelo,
         preco: parseFloat(preco),
         tamanho: tamanho,
-        imagem: reader.result // Use reader.result para acessar a URL da imagem
+        imagem: reader.result 
       };
       setCamisetas([...camisetas, novaCamiseta]);
     };
-    reader.readAsDataURL(imagem); // Leia o arquivo como uma URL de dados
+    reader.readAsDataURL(imagem); 
     setNome('');
     setModelo('');
     setPreco('');
@@ -46,8 +46,10 @@ const GerenciamentoCamisetas = () => {
 
   return (
     <div className="container">
-      <h1>Houg</h1>
-      <h2>Gerenciamento de Camisetas</h2>
+      <nav className="nav">
+        <h1>Houg</h1>
+      </nav>
+      <h2>Gerenciamento do Banco de Dados</h2>
       <form className="form" onSubmit={handleSubmit}>
         <label>
           Nome:
@@ -99,7 +101,7 @@ const GerenciamentoCamisetas = () => {
               <td>{camiseta.modelo}</td>
               <td>R${camiseta.preco.toFixed(2)}</td>
               <td>{camiseta.tamanho}</td>
-              <td><img src={camiseta.imagem} alt="Imagem Camiseta" /></td>
+              <td><img src={camiseta.imagem} alt="Imagem Camiseta" style={{ width: '150px', height: '150px' }} /></td>
             </tr>
           ))}
         </tbody>
