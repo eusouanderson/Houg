@@ -1,6 +1,10 @@
 from api.dinoma.create_order import create_order
-from fastapi import FastAPI
+from api.persons.users import login_user, register_user
+from api.model.model import UserInput
+
+from fastapi import FastAPI, Header, HTTPException
 import uvicorn  
+
 
 app = FastAPI()
 
@@ -9,19 +13,23 @@ def read_root():
     return {"message": "Hello, Houg!"}
 
 
-@app.get("v1/login", tags=["Login"])
-def login():
 
-    return
+@app.post("/v1/login", tags=["Login"])
+def login(username: str = Header(...), password: str = Header(...)):
+    response = login_user(username, password)
+    if response["message"] == "Usuario ou senha invalidos":
+        raise HTTPException(status_code=400, detail=response["message"])
+    return response
+
+@app.post("/v1/register", tags=["Register"])
+def register(username: str = Header(...), password: str = Header(...), name: str = Header(...), telephone: str = Header(...)):
+    response = register_user(username, password, name, telephone)
+    if response["message"] == "Usuario ja existe":
+        raise HTTPException(status_code=400, detail=response["message"])
+    return response
 
 
-@app.get("v1/register", tags=["Register"])
-def register():
-
-    return
-
-
-@app.get("v1/third_party_registration", tags=["Logout"])
+@app.get("v1/third_party_registration", tags=["Auth"])
 def third_party_registration():
 
     return
@@ -38,10 +46,8 @@ def generate_image_from_text(text: str):
     try:
         
         response = requests.get(api_url, params=params)
-
         
         response.raise_for_status()
-
         
         return response.content
 
@@ -53,12 +59,8 @@ def create_order(shipping_speed: str, delivery_method_id: int, order_id: int, cu
                 customer_document: str, customer_email: str, webhook_url: str, items: list, nfe: str, address: str):
     
     response = create_order(shipping_speed, delivery_method_id, order_id, customer_name, customer_document, customer_email, webhook_url, items, nfe, address)
-
     
     return response
-
-
-
 
 
 if __name__ == "__main__":
